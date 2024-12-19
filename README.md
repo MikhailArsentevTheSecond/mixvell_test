@@ -35,7 +35,7 @@ SearchResponse {Filters = null} ⊃ SearchFilters {Filters != null}
 
 Но возникает другая проблема - у каждого Route-а своё время жизни.
 
-### Как поступил
+### Решение
 Сделал cacheMap. Это словарь, который по HashCode request-а получает массив Id маршрутов,
 который хранится уже в стандартном IMemoryCache.
 
