@@ -56,4 +56,5 @@ SearchResponse {Filters = null} ⊃ SearchFilters {Filters != null}
 ### Не думал о
 
 * Валидации данных от провайдеров.
+* Логирование (начал в провайдерах, но не закончил).
 
