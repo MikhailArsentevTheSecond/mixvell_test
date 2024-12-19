@@ -44,7 +44,9 @@ public class SearchService : ISearchService
             AggregateProviderOne(_firstService.Search(request)), 
             AggregateProviderTwo(_secondService.Search(request)));
             
-        var flattenResult = result.SelectMany(x => x).ToArray();
+        var flattenResult = result.SelectMany(x => x)
+            .Where(x => request.Filters == null || request.Filters.IsCorrectRoute(x))
+            .ToArray();
         var aggregatedResult = new SearchResponse(flattenResult);
         return aggregatedResult;
     }
